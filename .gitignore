@@ -171,3 +171,6 @@ gradle-app.setting
 .idea/compiler.xml
 .idea/jarRepositories.xml
 .idea/vcs.xml
+.idea/checkstyle-idea.xml
+.idea/jpa-buddy.xml
+.idea/misc.xml
