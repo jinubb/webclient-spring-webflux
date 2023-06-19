@@ -4,14 +4,20 @@ import com.webflux.api.government.client.GovernmentUri;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
 
+import java.net.URI;
+
 @ConstructorBinding
-@ConfigurationProperties("government.client.subway.uri")
+@ConfigurationProperties("client.government.subway")
 public class SubwayUri extends GovernmentUri {
 
-    private final String searchSTNBySubwayLineInfo;
+    private final String searchSubwayArrival;
 
-    public SubwayUri(String host, Integer port, String searchSTNBySubwayLineInfo) {
+    public SubwayUri(String host, Integer port, String searchSubwayArrival) {
         super(host, port);
-        this.searchSTNBySubwayLineInfo = searchSTNBySubwayLineInfo;
+        this.searchSubwayArrival = searchSubwayArrival;
+    }
+
+    public URI getSearchSubwayInfo(String text) {
+        return super.toUri(this.searchSubwayArrival.replaceFirst("#1", text));
     }
 }

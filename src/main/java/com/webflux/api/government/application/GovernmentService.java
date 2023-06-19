@@ -1,27 +1,20 @@
 package com.webflux.api.government.application;
 
+import com.webflux.api.government.client.subway.SubwayClient;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import reactor.core.publisher.Mono;
 
+@Service
+@RequiredArgsConstructor
 public class GovernmentService {
 
-    public Mono<?> getBusRouteInfoItem(ServerRequest serverRequest) {
-        return Mono.empty();
-    }
+    private final SubwayClient subwayClient;
 
-    public Mono<?> getBusRouteStationList(ServerRequest serverRequest) {
-        return Mono.empty();
-    }
-
-    public Mono<?> getBusRouteList(ServerRequest serverRequest) {
-        return Mono.empty();
-    }
-
-    public Mono<?> getAreaBusRouteList(ServerRequest serverRequest) {
-        return Mono.empty();
-    }
-
-    public Mono<?> getBusRouteLineList(ServerRequest serverRequest) {
-        return Mono.empty();
+    public Mono<?> getSubwayArrival(ServerRequest serverRequest) {
+        return subwayClient.requestSubwayInfo(serverRequest.queryParam("text")
+                        .orElseThrow(() -> new IllegalArgumentException("Request query must be \"text\"")))
+                .onErrorResume(Mono::error);
     }
 }

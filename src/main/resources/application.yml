@@ -1,0 +1,7 @@
+client:
+  government:
+    subway:
+      host: swopenapi.seoul.go.kr/api/subway/sample/json
+      port: 80
+      searchSubwayArrival: realtimeStationArrival/0/5/#1
+
