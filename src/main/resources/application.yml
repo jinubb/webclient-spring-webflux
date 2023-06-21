@@ -5,3 +5,8 @@ client:
       port: 80
       searchSubwayArrival: realtimeStationArrival/0/5/#1
 
+springdoc:
+  swagger-ui:
+    server:
+      url: http://localhost:8080
+      description: local server
