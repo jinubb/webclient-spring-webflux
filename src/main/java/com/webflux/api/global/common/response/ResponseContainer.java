@@ -1,4 +1,4 @@
-package com.webflux.api.government.dto.response;
+package com.webflux.api.global.common.response;
 
 import lombok.Getter;
 

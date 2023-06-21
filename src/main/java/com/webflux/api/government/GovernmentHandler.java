@@ -1,7 +1,7 @@
 package com.webflux.api.government;
 
+import com.webflux.api.global.common.response.ReactiveResponse;
 import com.webflux.api.government.application.GovernmentService;
-import com.webflux.api.government.dto.response.ReactiveResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
