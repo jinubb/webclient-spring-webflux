@@ -175,3 +175,5 @@ gradle-app.setting
 .idea/jpa-buddy.xml
 .idea/misc.xml
 .idea/codeStyles/codeStyleConfig.xml
+*.iml
+*.xml
